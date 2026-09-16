@@ -1,0 +1,50 @@
+{
+  "name": "reading-space-mn",
+  "version": "0.1.5",
+  "description": "Reading Space plugin for MarginNote 4",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "AwakerOTE",
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "node scripts/build-release.js",
+    "dev": "node scripts/web-dev.js",
+    "sync:source": "node .github/tools/sync-source.mjs",
+    "web:build": "node scripts/web-build.js",
+    "verify": "pnpm run test:sync-source && pnpm run verify:source-snapshot && pnpm run verify:public-boundary && pnpm run verify:ipad-performance-guard && pnpm run verify:settings-sync-contract && pnpm run verify:chat-history-delete && pnpm run verify:mn-export-contract && pnpm run verify:ipad-mn-file-export && pnpm run verify:main-button-obsidian-submenu && pnpm run verify:obsidian-export-settings && pnpm run verify:selection-toolbar && pnpm run verify:quick-explain-dictionary && pnpm run verify:read-aloud-markdown-sanitize && pnpm run verify:release-notice && pnpm run verify:update-flow",
+    "verify:source-snapshot": "node .github/tools/sync-source.mjs --verify",
+    "verify:public-boundary": "node scripts/verify-public-boundary.js",
+    "verify:ipad-performance-guard": "node scripts/verify-ipad-performance-guard.js",
+    "verify:settings-sync-contract": "node scripts/verify-settings-sync-contract.js",
+    "verify:chat-history-delete": "node scripts/verify-chat-history-delete.js",
+    "verify:mn-export-contract": "node scripts/verify-mn-export-contract.js",
+    "verify:ipad-mn-file-export": "node scripts/verify-ipad-mn-file-export.js",
+    "verify:main-button-obsidian-submenu": "node scripts/verify-main-button-obsidian-submenu.js",
+    "verify:obsidian-export-settings": "node scripts/verify-obsidian-export-settings.js",
+    "verify:selection-toolbar": "node scripts/verify-selection-toolbar-context.js",
+    "verify:quick-explain-dictionary": "node scripts/verify-quick-explain-dictionary.js",
+    "verify:read-aloud-markdown-sanitize": "node scripts/verify-read-aloud-markdown-sanitize.js",
+    "verify:release-notice": "node scripts/verify-release-notice.js",
+    "verify:update-flow": "node scripts/verify-update-flow.js",
+    "diagnose:selection-toolbar": "node scripts/diagnose-selection-toolbar-probe.js",
+    "test:sync-source": "node --test .github/tools/sync-source.test.mjs"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.2",
+    "terser": "^5.46.1",
+    "vite": "^8.0.9",
+    "zustand": "^5.0.12"
+  },
+  "mnRails": {
+    "template": "web"
+  }
+}
