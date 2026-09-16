@@ -1,0 +1,42 @@
+# Operating-system and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Dependencies and generated output
+node_modules/
+.pnpm-store/
+src/web-dist/
+artifacts/
+dist/
+coverage/
+*.mnaddon
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pfx
+*.pem
+
+# Internal workspace material must never enter the public repository
+/.agents/
+/.backups/
+/.codex-links/
+/.qoder/
+/.trae/
+/release/
+/AGENTS.md
+/AGENTS.override.md
+/readingspace-mn-更新日志.md
+/*-本地-*.md
+
+# Interrupted mirror synchronization
+/.sync-*/
+
+# Local scratch output
+/.uploads/
+/output/
+/tmp/
